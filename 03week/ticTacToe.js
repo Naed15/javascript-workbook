@@ -25,38 +25,47 @@ function printBoard() {
 	console.log("  ---------");
 	console.log("2 " + board[2].join(" | "));
 }
-
-function horizontalWin() {
-	if (board[(0, 0)] && board[(0, 1)] && board[(0, 2)]);
-	else if (board[(1, 0)] && board[(1, 1)] && board[(1, 2)]);
-	else if (board[(2, 0)] && board[(2, 1)] && board[(2, 2)]);
+const switchPlayer = () => {
+	if (playerTurn == "X") {
+		playerTurn = "O";
+	} else {
+		playerTurn = "X";
+	}
+};
+for (i = 0; i <= 3; i++) {
+	board = [i][i] && [i][1] && [i][2] && [1][1] && [1];
 }
-
-function verticalWin() {
-	// Your code here
-}
-
-function diagonalWin() {
-	// Your code here
-}
-
 function checkForWin() {
-	// Your code here
-}
+	// will check for horizontal win first
+	function horizontalWin() {
+		if (horizontalWin()) {
+			console.log("Game over|" + playerTurn + " wins!");
+			board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]];
+		}
+	}
 
-function ticTacToe() {
-	// Your code here
-}
+	function verticalWin() {
+		// Your code here
+	}
 
-function getPrompt() {
-	printBoard();
-	console.log("It's Player " + playerTurn + "'s turn.");
-	rl.question("row: ", row => {
-		rl.question("column: ", column => {
-			ticTacToe();
-			getPrompt();
+	function diagonalWin() {
+		// Your code here
+	}
+
+	function ticTacToe() {
+		// Your code here
+	}
+
+	function getPrompt() {
+		printBoard();
+		console.log("It's Player " + playerTurn + "'s turn.");
+		rl.question("row: ", row => {
+			rl.question("column: ", column => {
+				ticTacToe();
+				getPrompt();
+			});
 		});
-	});
+	}
 }
 
 // Tests
