@@ -122,4 +122,11 @@ function isLegal() {
 // for terminal app no colors.
 //
 // 3. set the rules for the game.
+// no big blocks on small blcoks.
+// all blocks must be in order from largest to biggest
+// also must be bigger on bottom and smaller on top
+// all blocks must be on the last peg
 // 4. set a check for winner.
+// check for winner by checking where blocks are on the pegs
+// also check to see if blocks are in correct order
+//if so then there is a winner
