@@ -6,15 +6,55 @@ const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout
 });
+const enterWord = document.getElementById("trans");
+const submitWord = document.getElementById("submit");
+const outputWord = document.getElementById("output");
+const resetWord = document.getElementById("reset");
+
+enterWord.onclick = function() {
+	enterWord.textContent = pigLatin(enterWord.value);
+};
+submitWord.onclick = function() {
+	submitWord.textContent = pigLatin(submitWord.value);
+};
+outputWord.onclick = function() {
+	outputWord.textContent = pigLatin(outputWord.value);
+};
+restWord.onclick = function() {
+	resetWord.textContent = pigLatin(resetWord.value);
+};
 
 function pigLatin(word) {
-	word = word.trim().toLowerCase();
+	let word = document.getElementByID("Trans.value"());
 	function convert(word) {
 		const vowels = ["a", "e", "i", "o", "u", "y"];
 		const splitWord = word
 			.toLowerCase()
 			.trim()
 			.split(""); //['c','a','r']
+		const assert = require("assert");
+		const readline = require("readline");
+		const rl = readline.createInterface({
+			input: process.stdin,
+			output: process.stdout
+		});
+		const enterWord = document.getElementById("trans");
+		const submitWord = document.getElementById("submit");
+		const outputWord = document.getElementById("output");
+		const resetWord = document.getElementById("reset");
+
+		enterWord.onclick = function() {
+			enterWord.textContent = pigLatin(enterWord.value);
+		};
+		submitWord.onclick = function() {
+			submitWord.textContent = pigLatin(submitWord.value);
+		};
+		outputWord.onload = function() {
+			outputWord.textContent = pigLatin(outputWord.value);
+		};
+		restWord.onclick = function() {
+			resetWord.textContent = pigLatin(resetWord.value);
+		};
 
 		const ending = new Array("a", "y");
 		const firstLetter = splitWord[0];
@@ -53,7 +93,7 @@ function pigLatin(word) {
 		}
 		return myTranslations.join(" ");
 	} else {
-		return convert(word); //only one word, so translate once!
+		return document.getElementByID("output"); //only one word, so translate once!
 	}
 }
 function getPrompt() {
@@ -87,3 +127,5 @@ if (typeof describe === "function") {
 } else {
 	getPrompt();
 }
+
+//Pig Latin Gui//
