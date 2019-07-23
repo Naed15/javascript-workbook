@@ -29,7 +29,14 @@ class Ship {
 		this.ability = ability;
 		this.crew = [];
 	}
+	missionStatement(crew) {
+		if (this.crew.length > 0) {
+			return this.ability;
+		}
+		return "Can't perform a mission yet.";
+	}
 }
+
 let crewMember1 = new CrewMember("Rick Martinez", "pilot", "chemistry");
 console.log(crewMember1);
 let crewMember2 = new CrewMember("Commander Lewis", "commander", "geology");
@@ -39,9 +46,6 @@ let mav = new Ship("Mars Ascent Vehicle", "MAV", "Ascend into low orbit");
 console.log(mav);
 let hermes = new Ship("Hermes", "Main Ship", "Interplanetary Space Travel");
 console.log(hermes);
-
-
-
 
 //tests
 if (typeof describe === "function") {
@@ -96,9 +100,4 @@ if (typeof describe === "function") {
 			assert.equal(hermes.missionStatement(), "Interplanetary Space Travel");
 		});
 	});
-}
-
-
-missionStatement(){
-	this.crew['']
 }
